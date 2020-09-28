@@ -1,22 +1,18 @@
-//PINO 7 LUZ DE LED
-int ledPin = 7; //LUZ BRANCA
-//PINOS DO SENSOR LDR
-int ldrPin = 0; //LDR no pino analígico 8
-int ldrValor = 0; //Valor lido do LDR
 
-//PINOS DO LED RGB
+int ledPin = 7; 
+int ldrPin = 0; 
+int ldrValor = 0;
+
 const int azul = 9;
 const int verde = 10;
 const int vermelho = 11;
 
 void setup() {
-  Serial.begin(9600); //Inicia a comunicação serial
-  //PINOS DO LED RGB
+  Serial.begin(9600); 
   pinMode(azul, OUTPUT);
   pinMode(verde, OUTPUT);
   pinMode(vermelho, OUTPUT);
-  //PINO LUZ DE LED
-  pinMode(ledPin,OUTPUT); //define a porta 7 como saída
+  pinMode(ledPin,OUTPUT); 
 }
 
 void vermelhoFuncao(){
@@ -51,7 +47,7 @@ void brancoFuncao(){
 }
 
 void loop() {
- ldrValor = analogRead(ldrPin); //O valor lido será entre 0 e 1023
+ ldrValor = analogRead(ldrPin); // O valor lido será entre 0 e 1023
   if (ldrValor>= 1000){
     digitalWrite(ledPin,HIGH);
     
